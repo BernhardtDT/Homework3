@@ -1,0 +1,81 @@
+
+<h1>Student</h1>
+<div>
+    <button class="btn btn-primary" (click)="gotosubject()">Add Subject</button>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <br>
+            <label>Student Name</label>
+            <input name="StudentName" #StudentName="ngModel" [(ngModel)]="studentservice.studentData.Student_Name">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <br>
+            <label>Student Surnname</label>
+            <input name="StudentSurname" #StudentSurname="ngModel"
+                [(ngModel)]="studentservice.studentData.Student_Surname">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <br>
+            <label>Student Number</label>
+            <input name="StudentNumber" #StudentNumber="ngModel"
+                [(ngModel)]="studentservice.studentData.Student_Number">
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <button class="btn btn-success" (click)="addstudent()"><i class="fa fa-plus">Add Student</i></button>
+</div>
+
+
+
+
+<br>
+<div>
+    <div class="col-md-9">
+        <table class="table table-dark">
+            <tr>
+                <th>StudentName</th>
+                <th>StudentSurname</th>
+                <th>Student_Number</th>
+                <th></th>
+                <th></th>
+                <th>View Grade</th>
+            </tr>
+            <tr *ngFor="let item of studentservice.studentList">
+                <td>{{item.Student_Name}}</td>
+                <td>{{item.Student_Surname}}</td>
+                <td>{{item.Student_Number}}</td>
+                <td>
+                <a class="btn btn-sm btn-success text-white ml-1"(click)="onEditStudentItem(item)" style="text-align: center;"><i class="fa fa-pencil"></i></a>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-danger text-white ml-1"(click)="onDeleteStudentItem(item.Student_ID)" style="text-align: center;"><i class="fa fa-trash"></i></a>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-primary text-white ml-1"(click)="onViewGrade(item)" style="text-align: center;"><i class="fa fa-search-plus"></i></a>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <button class="btn btn-warning" (click)="updateStudent()"><i class="fa fa-pencil">Update Student</i></button>
+        </div>
+    </div>
+</div>

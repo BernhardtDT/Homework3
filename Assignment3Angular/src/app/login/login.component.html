@@ -1,0 +1,20 @@
+<div>
+    <label>Username</label>
+    <input name="Username" #Username="ngModel" [(ngModel)]="studentservice.userData.Username">
+</div>
+
+<div>
+    <label>Password</label>
+    <input name="Password" #Password="ngModel" [(ngModel)]="studentservice.userData.Password">
+</div>
+<div>
+    <button class="btn btn-success"><i class="fa fa-plus">Login</i></button>
+</div>
+
+<div>
+    <button class="btn btn-warning"><i class="fa fa-plus">Register</i></button>
+</div>
+
+<div>
+    <button class="btn btn-dark" (click)="gotostudent()"><i class="fa fa-plus">Student</i></button>
+</div>

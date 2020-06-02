@@ -1,0 +1,7 @@
+{
+  "name": "Assignment3Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
